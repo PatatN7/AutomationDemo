@@ -1,0 +1,14 @@
+{
+  "name": "automationdemo",
+  "version": "1.0.0",
+  "description": "This is a demo of automation with Playwright written in Typescript",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.5"
+  }
+}
