@@ -1,14 +1,14 @@
 # AutomationDemo
 This is a demo of automation with Playwright written in Typescript
 
-## Installing dependancies and browsers
+## Installing dependencies and browsers
 
 ```
 npm install
 npx playwright install
 ```
 
-## Running all tests with all browsers sepcified in the playwright.config.ts
+## Running all tests with all browsers specified in the playwright.config.ts
 
 ```
 npx playwright test
@@ -53,12 +53,12 @@ npx playwright test --headed
 ```
 The --headed option allows you to actually see the browser as the test is ran
 
-## Running more than the default ammount of workers
+## Running more than the default amount of workers
 
 ```
 npx playwright test --workers n
 ```
-exmaple
+example
 ```
 npx playwright test --workers 10
 ```
@@ -69,7 +69,7 @@ The amount of workers specified is the amount of workers that will be used to ru
 ```
 npx playwright test --repeat-each n
 ```
-exmaple
+example
 ```
 npx playwright test --repeat-each 10
 ```
