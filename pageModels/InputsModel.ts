@@ -16,9 +16,9 @@ export class InputsModel {
   readonly textEmailError1: Locator;
   readonly textPasswordError1: Locator;
 
-  // Navigation
-  readonly navEmails: Locator;
-  readonly navPassword: Locator;
+  // Tab
+  readonly tabEmails: Locator;
+  readonly tabPassword: Locator;
 
   constructor(page: Page) {
     // Page
@@ -36,8 +36,8 @@ export class InputsModel {
     this.textEmailError1 = page.locator("span#error_1_id_email");
     this.textPasswordError1 = page.locator("span#error_1_id_password");
 
-    // Navigation
-    this.navEmails = page.locator("a[href='/elements/input/email']");
-    this.navPassword = page.locator("a[href='/elements/input/passwd']");
+    // Tab
+    this.tabEmails = page.locator("a[href='/elements/input/email']");
+    this.tabPassword = page.locator("a[href='/elements/input/passwd']");
   }
 }

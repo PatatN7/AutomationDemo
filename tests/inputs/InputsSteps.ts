@@ -1,6 +1,7 @@
 import { expect, Page } from "@playwright/test";
 import { InputsData } from "../../testData/InputsData";
 import { InputsModel } from "../../pageModels/InputsModel";
+import { NavigationModel } from "../../pageModels/Navigation";
 
 export class InputsSteps {
   testData: InputsData;
@@ -16,11 +17,13 @@ export class InputsSteps {
 
     // Initialize page models
     this.inputs = new InputsModel(page);
+    const navigation = new NavigationModel(page);
 
     // Navigate to page
     await page.goto("https://www.qa-practice.com/");
-    await page.locator("a[href='/elements/input/simple']").click();
-    await expect(page.locator("label[for='id_text_string']")).toHaveText("Text string*");
+    await navigation.ddSingleUiElements.click();
+    await navigation.navInputs.click();
+    await expect(page.locator("h1")).toHaveText("Input field");
   }
 
   async inputFieldRequiredValidation() {
@@ -94,7 +97,7 @@ export class InputsSteps {
 
   async emailFieldRequiredValidation() {
     // Test that field is required
-    await this.inputs.navEmails.click();
+    await this.inputs.tabEmails.click();
     await expect(this.page.locator("label[for='id_email']")).toHaveText("Email*");
     await this.inputs.inputEmail.press("Enter");
     await this.page.waitForTimeout(2000); // Manual wait as the tooltip can not be targeted for an assertion
@@ -133,7 +136,7 @@ export class InputsSteps {
 
   async passwordFieldRequiredValidation() {
     // Test that field is required
-    await this.inputs.navPassword.click();
+    await this.inputs.tabPassword.click();
     await expect(this.page.locator("label[for='id_password']")).toHaveText("Password*");
     await this.inputs.inputPassword.press("Enter");
     await this.page.waitForTimeout(2000); // Manual wait as the tooltip can not be targeted for an assertion
